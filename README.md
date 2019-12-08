@@ -74,4 +74,6 @@ http://localhost:8080/actuator/
 Admirer
 ```bash
 http://localhost:8081
+Server: 172.17.0.2:5431
+userName : local
 ```
