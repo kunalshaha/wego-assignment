@@ -26,7 +26,8 @@ public class JdbcConnect {
             this.conn = DriverManager.getConnection(loadedProp.getProperty("db.url"),
                     loadedProp.getProperty("db.user"), loadedProp.getProperty("db.password"));
         } catch (Exception e) {
-            System.out.println("Unable to get connection");
+            System.out.println("Unable to get connection"+e);
+            e.printStackTrace();
         }
     }
 

@@ -40,7 +40,6 @@ public class ParkingDetailsParser {
                     double longitude = Double.parseDouble(record.get(3));
                     LatLonCoordinate conversionResult = SVY21.computeLatLon(latitude, longitude);
                     ParkingInfo parkingInfo = new ParkingInfo(carparkName, adrress, conversionResult.getLatitude(), conversionResult.getLongitude());
-                    System.out.println(parkingInfo.toString());
                     infoList.add(parkingInfo);
                 }
             });
@@ -48,7 +47,7 @@ public class ParkingDetailsParser {
             createConnectionAndInsertDataInDB(infoList);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Exception processing parseDataPushDataInDb"+e);
         }
 
         return infoList;

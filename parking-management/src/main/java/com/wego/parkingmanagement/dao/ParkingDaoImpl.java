@@ -1,6 +1,5 @@
 package com.wego.parkingmanagement.dao;
 
-import com.sun.javafx.tools.packager.PackagerException;
 import com.wego.parkingmanagement.exception.ParkingExceptionHandler;
 import com.wego.parkingmanagement.model.CarParks;
 import com.wego.parkingmanagement.model.ParkingMetaInfo;

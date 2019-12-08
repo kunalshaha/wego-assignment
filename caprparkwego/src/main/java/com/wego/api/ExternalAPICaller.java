@@ -28,15 +28,6 @@ public class ExternalAPICaller {
 
     private static final String EXTERNALURI = PropertyLoader.loadProperties().getProperty("api.exertnal.uri");
 
-    /*public static void main(String args[]) {
-        try {
-            getPCarParkAvailabilityRESTAPI();
-        } catch (Exception e) {
-            System.out.println("Error processing API data :: "+ e);
-            e.printStackTrace();
-        }
-    }*/
-
 
     /**
      *
@@ -51,7 +42,7 @@ public class ExternalAPICaller {
             Date d = new Date(cal.getTimeInMillis());
             SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
             String formattedDate = input.format(d);
-            System.out.println(formattedDate);
+            System.out.println("Executing API for TS ::  "+formattedDate);
 
             HttpGet getRequest = new HttpGet(EXTERNALURI + formattedDate);
 
@@ -64,7 +55,7 @@ public class ExternalAPICaller {
             //verify the valid error code first
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode != 200) {
-                System.out.println("Failed with HTTP error code :: "+statusCode);
+               System.out.println("Failed with HTTP error code :: "+statusCode);
                 throw new RuntimeException("Failed with HTTP error code : " + statusCode);
             }
 
@@ -91,7 +82,6 @@ public class ExternalAPICaller {
      *
      */
      static void updateOrInsertDataAccordingToLatestInfo(List<Items> itmesToUpdateOrInsert) throws SQLException {
-        System.out.println(itmesToUpdateOrInsert.get(0).getCarParkData().size());
         Connection connection = JdbcConnect.getInstance().getConnectionObj();
         String queryForCarParkAvailaibility1 = "INSERT INTO car_park_info (car_park_number,lot_type,total_lots,lots_available,update_datetime)" +
                 " VALUES (?,?,?,?,?)" +
@@ -117,8 +107,7 @@ public class ExternalAPICaller {
             }
             preparedStmtDataRec.executeBatch();
         } catch (Exception e) {
-            System.out.println("Error in processing updateOrInsertDataAccordingToLatestInfo " + e);
-            e.printStackTrace();
+          System.out.println("Error in processing updateOrInsertDataAccordingToLatestInfo ");
 
         } finally {
             connection.close();

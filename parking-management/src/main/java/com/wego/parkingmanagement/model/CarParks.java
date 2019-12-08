@@ -1,7 +1,6 @@
 package com.wego.parkingmanagement.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.wego.parkingmanagement.validator.NumericString;
 
 
 /**
@@ -17,6 +16,7 @@ public class CarParks implements Comparable<CarParks> {
     private Integer available_lots ;
     @JsonIgnore
     private Double calculatedDistanceForGivenLatLong;
+    @JsonIgnore
     private String carParkName;
     private String address;
 

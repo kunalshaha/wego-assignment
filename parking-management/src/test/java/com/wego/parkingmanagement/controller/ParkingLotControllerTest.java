@@ -36,7 +36,7 @@ public class ParkingLotControllerTest {
     private ParkingService parkingService;
 
 
-    private final String jsonResp = "[{\"latitude\":1.29042987441557,\"longitude\":103.864681788302,\"total_lots\":100,\"available_lots\":50,\"carParkName\":\"Slot0\",\"address\":\"Bounavista\"},{\"latitude\":1.32157243060852,\"longitude\":103.884495486022,\"total_lots\":100,\"available_lots\":50,\"carParkName\":\"Slot1\",\"address\":\"Bounavista\"}]";
+    private final String jsonResp = "[{\"latitude\":1.29042987441557,\"longitude\":103.864681788302,\"total_lots\":100,\"available_lots\":50,\"address\":\"Bounavista\"},{\"latitude\":1.32157243060852,\"longitude\":103.884495486022,\"total_lots\":100,\"available_lots\":50,\"address\":\"Bounavista\"}]";
 
     @Test
     public void getNearestParkinList() throws Exception {
