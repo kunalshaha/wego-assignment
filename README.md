@@ -61,7 +61,7 @@ Now the API, Postgres is up and running using docker, also the data has been pop
 
 API URI
 ```bash
-http://localhost:8080/carparks/nearest?latitude=1&longitude=10&page=1&per_page=2
+http://localhost:8080/carparks/nearest?latitude=1.37326&longitude=103.897&page=1&per_page=3
 ```
 Swagger UI
 ```bash
