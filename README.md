@@ -23,7 +23,7 @@ docker-compose -f docker-compose.yml up
 
 ## Populate static data & External Api Data
 ```bash
-cd caprparkwego
+cd ../caprparkwego
 ```
 ```bash
 mvn clean install
@@ -39,7 +39,7 @@ and do not have to automate the downloading and updating of this data.
   Approach : In this approach parsed the static data & pushed the same into the DB.
 
 ```bash
- java -jar caprparkwego/target/caprpark-wego-1.0-SNAPSHOT.jar Load-Static-Data
+ java -jar target/caprpark-wego-1.0-SNAPSHOT.jar Load-Static-Data
 ```
 
 This above command will populate the static data in DB.
@@ -50,7 +50,7 @@ This above command will populate the static data in DB.
 
   Approach : In this approach data fetched from the API according to the current timestamp, invoking this api again will upsert the data (ie update the data according to latest TS).
 ```bash
- java -jar caprparkwego/target/caprpark-wego-1.0-SNAPSHOT.jar Load-API-Data
+ java -jar target/caprpark-wego-1.0-SNAPSHOT.jar Load-API-Data
 ```
 This above command populate the parking availability data from External API in DB.
 
