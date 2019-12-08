@@ -17,11 +17,11 @@ docker build -t "parking-mgmt" .
 docker-compose -f docker-compose.yml up
 ```
 - It will run postgres then admirer (i.e Client that connects to postgres) and then spring boot app.
-- Just note that I have mapped *.sql from sql folder in docker-compose.
+- Just note that I have mapped *.sql from sql folder in docker-compose which will create resp tables.
 
 
 
-## Populate static data & External Api Data
+## Populate static data & External Api Data (Run Manually)
 ```bash
 cd ../caprparkwego
 ```
