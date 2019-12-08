@@ -3,7 +3,9 @@
 API-only application that would return the closest carparks to a user with the parking lot availability.
 
 ## Installation
+```bash
 cd parking-management
+```
 ```bash
 mvn clean install
 ```
@@ -15,13 +17,13 @@ docker build -t "parking-mgmt" .
 docker-compose -f docker-compose.yml up
 ```
 - It will run postgres then admirer (i.e Client that connects to postgres) and then spring boot app.
-- Just note that I have mapped *.sql from sql folder in docker-compose.
+- Just note that I have mapped *.sql from sql folder in docker-compose which will create resp tables.
 
 
 
-## Populate static data & External Api Data
+## Populate static data & External Api Data (Run Manually)
 ```bash
-cd caprparkwego
+cd ../caprparkwego
 ```
 ```bash
 mvn clean install
@@ -37,7 +39,7 @@ and do not have to automate the downloading and updating of this data.
   Approach : In this approach parsed the static data & pushed the same into the DB.
 
 ```bash
- java -jar caprparkwego/target/caprpark-wego-1.0-SNAPSHOT.jar Load-Static-Data
+ java -jar target/caprpark-wego-1.0-SNAPSHOT.jar Load-Static-Data
 ```
 
 This above command will populate the static data in DB.
@@ -48,7 +50,7 @@ This above command will populate the static data in DB.
 
   Approach : In this approach data fetched from the API according to the current timestamp, invoking this api again will upsert the data (ie update the data according to latest TS).
 ```bash
- java -jar caprparkwego/target/caprpark-wego-1.0-SNAPSHOT.jar Load-API-Data
+ java -jar target/caprpark-wego-1.0-SNAPSHOT.jar Load-API-Data
 ```
 This above command populate the parking availability data from External API in DB.
 
@@ -59,7 +61,7 @@ Now the API, Postgres is up and running using docker, also the data has been pop
 
 API URI
 ```bash
-http://localhost:8080/carparks/nearest?latitude=1&longitude=10&page=1&per_page=2
+http://localhost:8080/carparks/nearest?latitude=1.37326&longitude=103.897&page=1&per_page=3
 ```
 Swagger UI
 ```bash
