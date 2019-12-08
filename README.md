@@ -3,7 +3,9 @@
 API-only application that would return the closest carparks to a user with the parking lot availability.
 
 ## Installation
+```bash
 cd parking-management
+```
 ```bash
 mvn clean install
 ```
